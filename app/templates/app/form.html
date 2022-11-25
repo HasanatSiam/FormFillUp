@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+  
+
+    <div class="container" style="height: 900px">
+      <form method="post">
+        {% csrf_token %}
+        <h3>Academic Information</h3>
+        <div class="row">
+ 
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Student ID</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                aria-describedby="basic-addon1"
+                name="student_id"
+                maxlength="200"
+                required=""
+                id="id_student_id"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Semester</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="semester"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_semester"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Session</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="session"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_session"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Hall</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="hall"
+                aria-describedby="basic-addon1"
+                required
+                id="id_hall"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Department</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="department"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_department"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1" >Exam Year</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="exam_year"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_exam_year"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Exam starting date</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="exam_starting_date"
+                aria-describedby="basic-addon1"
+                maxlength=""
+                required
+                id="id_exam_starting_date"
+              />
+            </div>
+          </div>
+        </div>
+
+        <h5>Course codes</h5>
+        <div class="row">
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">1</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code1"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code1"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">2</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code2"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code2"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">3</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code3"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code3"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">4</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code4"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code4"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">5</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code5"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code5"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">6</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code6"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code6"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">7</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code7"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code7"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">8</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code8"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code8"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">9</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="code9"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                id="id_code9"
+              />
+            </div>
+          </div>
+        </div>
+
+        <h5>Last Semester Information</h5>
+        <div class="row">
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Last semester</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="last_semester"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_last_semester"
+              />
+            </div>
+          </div>
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Passing Year</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="passing_year"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_passing_year"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Result</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="result"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_result"
+              />
+            </div>
+          </div>
+        </div>
+
+        <h3>Personal Information</h3>
+        <div class="row">
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Name</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="name"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_name"
+              />
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Father/Husband</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="father"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_father"
+              />
+            </div>
+          </div>
+
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Mother</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="mother"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_mother"
+              />
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Guardian</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="guardian"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_guardian"
+              />
+            </div>
+          </div>
+          <!-- <div class="col-8">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1"
+                  >Parmanent Address</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="parAddress"
+                aria-describedby="basic-addon1"
+              />
+            </div>
+          </div> -->
+
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Phone</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="phone"
+                aria-describedby="basic-addon1"
+                maxlength="50"
+                required
+                id="id_phone"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Birth Date</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="birth_date"
+                aria-describedby="basic-addon1"
+                maxlength=""
+                required
+                id="id_birth_date"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Nationality</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="nationality"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_nationality"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Religion</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="religion"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_religion"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- --------------------- -->
+        <h5>Permenant Address</h5>
+        <div class="row">
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Village</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="village"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_village"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Post office</span
+                >
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="post_office"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_post_office"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Upazila</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="upazila"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_upazila"
+              />
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">District</span>
+              </div>
+              <input
+                type="text"
+                class="form-control"
+                name="district"
+                aria-describedby="basic-addon1"
+                maxlength="200"
+                required
+                id="id_district"
+              />
+            </div>
+          </div>
+        </div>
+        <!-- ----------------------------------- -->
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary" type="submit">Submit</button>
+          <button class="btn btn-primary ml-2" id="static"  type="button">Static Data</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      $(`#examForm`).on("submit", function (e) {
+        e.preventDefault();
+        let json = Object.fromEntries(
+          new FormData($(`#examForm`)[0]).entries()
+        );
+        console.log(json);
+      });
+
+      document.getElementById('static').addEventListener('click', () => {
+        document.getElementById('id_student_id').value='17701015'
+        document.getElementById('id_semester').value='6th'
+        document.getElementById('id_session').value='2016-17'
+        document.getElementById('id_hall').value='Shaheed Abdur Rab'
+        document.getElementById('id_exam_starting_date').value='10/10/2022'
+        document.getElementById('id_code1').value='CSE 611'
+        document.getElementById('id_code2').value='CSE 612'
+        document.getElementById('id_code3').value='CSE 613'
+        document.getElementById('id_code4').value='CSE 614'
+        document.getElementById('id_code5').value='CSE 615'
+        document.getElementById('id_code6').value='CSE 616'
+        document.getElementById('id_code7').value='CSE 617'
+        document.getElementById('id_code8').value='CSE 618'
+        document.getElementById('id_code9').value='CSE 619'
+        document.getElementById('id_last_semester').value='5th'
+        document.getElementById('id_passing_year').value='2021'
+        document.getElementById('id_result').value='3.23'
+        document.getElementById('id_name').value='Wasim Shiek'
+        document.getElementById('id_father').value='Roman Shiek'
+        document.getElementById('id_mother').value='Romana Shiek'
+        document.getElementById('id_guardian').value='Roman Shiek'
+        document.getElementById('id_phone').value='+8801731551365'
+        document.getElementById('id_birth_date').value='10/10/10'
+        document.getElementById('id_nationality').value='Bangladeshi'
+        document.getElementById('id_religion').value='Islam'
+        document.getElementById('id_village').value='Zobra'
+        document.getElementById('id_upazila').value='Hathazari'
+        document.getElementById('id_district').value='Chittagong'
+        document.getElementById('id_department').value='CSE'
+        document.getElementById('id_exam_year').value='2022'
+        document.getElementById('id_post_office').value='CU'
+
+
+      })
+    </script>
+
+  </body>
+</html>

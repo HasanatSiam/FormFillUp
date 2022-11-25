@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bootstrap demo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+</head>
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg bg-light">
+      <div class="container-fluid">
+        <!-- <a class="navbar-brand" href="#">Navbar</a> -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <!-- <a class="nav-link active" aria-current="page" href="/dashboard.html">Sign out</a> -->
+              <a href="/accounts/login/" role="button" class="btn btn-outline-info">Sign in</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <!-- <a class="nav-link active" aria-current="page" href="/dashboard.html">Sign out</a> -->
+              <a href="/accounts/logout/" role="button" class="btn btn-outline-danger">Sign out</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+
+
+
+  <div class="d-flex flex-row align-items-center justify-content-center">
+    <div class="container card w-75 p-5">
+      <div class="row d-flex align-items-center justify-content-center my-5">
+        <div style="width: 100px;height: 100px; border-radius: 50%;background-color: blueviolet;">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Username: <span class="text-dark fs-3">{{ request.user.username }}</span></p>
+        </div>
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Email address: <span class="text-dark fs-3">{{ request.user.email }}</span></p>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Student ID: <span class="text-dark fs-3">{{ request.user.student_id }}</span></p>
+        </div>
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Full name: <span class="text-dark fs-3">{{ request.user.fullname }}</span></p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm">
+          <p class="fs-4 text-muted">Semester: <span class="text-dark fs-3">{{ request.user.semester }}</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="my-5">
+    <div class="text-center">
+      <a href="/add_formfillup" role="button" class="btn btn-outline-success">Form Fillup</a>
+    </div>
+  </div>
+
+  <div class="d-flex flex-row align-items-center justify-content-center">
+    <div class="container card w-75 p-5">
+      <h3>Status</h3>
+      <p>Your form has been recieved by the 
+        {% if  form.step == 1 %}
+          department
+        {% elif form.step == 2 %}
+          hall
+        {% elif form.step == 3 %}
+          Administration office
+        {% else %}
+          Your form is successfully accepted.
+        {% endif %}
+        </p>
+    </div>
+  </div>
+
+
+  {% if  form.step == 4 %}
+    <div class="my-5">
+      <div class="text-center">
+        <a href="/payment" role="button" class="btn btn-outline-warning">Pay</a>
+      </div>
+    </div>
+  {% endif %}
+
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
