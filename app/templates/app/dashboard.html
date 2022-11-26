@@ -19,12 +19,14 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+          <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <!-- <a class="nav-link active" aria-current="page" href="/dashboard.html">Sign out</a> -->
+              <a class="nav-link active" aria-current="page" href="/dashboard.html">Sign out</a>
               <a href="/accounts/login/" role="button" class="btn btn-outline-info">Sign in</a>
             </li>
-          </ul>
+          </ul> -->
+
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <!-- <a class="nav-link active" aria-current="page" href="/dashboard.html">Sign out</a> -->
@@ -101,20 +103,23 @@
           <p>Your form has been recieved by the hall.</p>
         {% elif form.step == 3 %}
           <p>Your form has been recieved by the administration office.</p>
-        {% elif form.step == 4 %}
-          <p> form is successfully accepted. </p>
-        {% else %}
+          {% else %}
           <p>Please fill up your form.</p>
+          {% endif %}
+        {% if form.steps == 4 %}
+          <p style="color:green; font-size:large" >Your form is successfully accepted. </p>
         {% endif %}
+
+        <p id="paid" style="display:none; color: green; text-decoration: solid; font-weight: bolder; font-size: large;">Your payment is complete</p>
         
     </div>
   </div>
 
 
-  {% if  form.step == 4 %}
+  {% if  form.steps == 4 %}
     <div class="my-5">
       <div class="text-center">
-        <a href="/payment" role="button" class="btn btn-outline-warning">Pay</a>
+        <button  role="button" onclick="document.getElementById('paid').style.display='block'" class="btn btn-outline-warning">Pay</button>
       </div>
     </div>
   {% endif %}

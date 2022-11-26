@@ -8,6 +8,7 @@ from accounts.models import CustomUser
 class Formfillup(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     step = models.PositiveSmallIntegerField(default=1, blank=True, null=True)
+    steps = models.PositiveSmallIntegerField(default=1, blank=True, null=True)
     dept_signature = models.ImageField(
         null=True, blank=True, upload_to='uploads/%Y-%m-%d')
     provost_signature = models.ImageField(
