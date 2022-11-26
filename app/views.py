@@ -54,6 +54,7 @@ def change_step(request, form_id):
 	form = Formfillup.objects.filter(id=form_id).last()
 	form.step = int(form.step) + 1
 	form.save()
+	
 	return redirect('index')
 
 
@@ -63,6 +64,7 @@ def add_payment(request, form_id):
 		amount = request.POST.get('amount')
 		form = Formfillup.objects.filter(id=form_id).last()
 		form.payable_amount = float(amount)
+		form.step = 4
 		form.save()
 		return redirect('index')
 	return render(request, 'app/add_amount.html', {'form': form})
