@@ -83,17 +83,30 @@
   <div class="d-flex flex-row align-items-center justify-content-center">
     <div class="container card w-75 p-5">
       <h3>Status</h3>
-      <p>Your form has been recieved by the 
-        {% if  form.step == 1 %}
-          department
+      
+        <!-- <p>Your form has been recieved by the 
+          {% if  form.step == 1 %}
+            department
+          {% elif form.step == 2 %}
+            hall
+          {% elif form.step == 3 %}
+            Administration office
+          {% else %}
+            Your form is successfully accepted.
+          {% endif %} 
+        </p> -->
+        {% if form.step == 1 %}
+          <p>Your form has been recieved by the department</p>
         {% elif form.step == 2 %}
-          hall
+          <p>Your form has been recieved by the hall</p>
         {% elif form.step == 3 %}
-          Administration office
+          <p>Your form has been recieved by the administration office</p>
+        {% elif form.step == 4 %}
+          <p> form is successfully accepted. </p>
         {% else %}
-          Your form is successfully accepted.
+          <p>Please fill up your form.</p>
         {% endif %}
-        </p>
+        
     </div>
   </div>
 
